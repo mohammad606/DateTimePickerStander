@@ -1,0 +1,328 @@
+
+*{
+    margin: 0;
+}
+
+.contDatePicker{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.showDate{
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+
+.calSvg{
+    cursor: pointer;
+}
+
+.contSelectDateTimePicker{
+    display: flex;
+}
+
+.contSelectDatePicker{
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+}
+
+.contSelectDate{
+    width: fit-content;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    height: fit-content;
+    max-height: 360px;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 12px 0.5px #000000;
+    -moz-box-shadow: 5px 5px 12px 0.5px #000000;
+    box-shadow: 5px 5px 12px 0.5px #000000;
+    user-select: none;  /* يمنع التحديد */
+    -webkit-user-select: none; /* لمتصفحات WebKit */
+    -moz-user-select: none; /* لفايرفوكس */
+    -ms-user-select: none; /* لإنترنت إكسبلورر */
+}
+
+.controlDate{
+    width: 100%;
+    min-height: 13%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.yearSelector{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 10px;
+    cursor: pointer;
+
+}
+.arrowYear{
+    transition: all 0.3s ease;
+    padding: 8px;
+    width: 30px;
+    height: 30px;
+
+}
+.arrowYear:hover{
+    background-color: #3f3e3e;
+    border-radius: 100%;
+}
+.contMonthSelect{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 5px 10px;
+
+}
+
+.arrowMonthIcon{
+    cursor: pointer;
+    padding: 8px;
+    width: 30px;
+    height: 30px;
+
+}
+
+.arrowMonthIcon:hover{
+    background-color: #3f3e3e;
+    border-radius: 100%;
+}
+
+
+.contSelectorDay{
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+
+}
+
+.contDay{
+    font-weight: 200;
+}
+
+
+.contDay,.contDayNum{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(7, 1fr);
+}
+.contDayNum{
+    cursor: pointer;
+
+}
+.contDayNum span{
+    padding: 10px 10px;
+    transition: all 0.1s ease;
+    border-radius: 100%;
+
+
+}
+.contDayNum span:hover{
+    background-color: #3f3e3e;
+}
+
+.dayNum{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yearSelectorArray{
+    justify-content: space-between;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px;
+    position: absolute;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+.yearSelectorArray::-webkit-scrollbar {
+    width: 10px; /* عرض الشريط */
+}
+
+.yearSelectorArray::-webkit-scrollbar-track {
+    background: #f1f1f1; /* لون خلفية المسار */
+    border-radius: 5px;
+}
+
+.yearSelectorArray::-webkit-scrollbar-thumb {
+    background: #888; /* لون شريط التمرير */
+    border-radius: 5px;
+}
+
+.yearNum{
+    padding: 15px;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.yearNum:hover{
+    background-color: #3f3e3e;
+}
+
+/*--------------------------------------------------------------------------------------------- time*/
+
+.timePickerContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-left: 1px solid #444;
+    margin-top: 10px;
+}
+
+.timePicker{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+
+.timeCont{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+
+.conWheel{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    height: 100%;
+}
+
+.time-picker-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+.wheel-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #2d3748;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.wheel {
+    position: relative;
+    height: 180px;
+    width: 80px;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.wheel::before,
+.wheel::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+
+.wheel-scroll {
+    height: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.wheel-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.wheel-item {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: center;
+    color: #a0aec0;
+    font-size: 24px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.wheel-item:hover {
+    color: #ffffff;
+}
+
+.wheel-item.selected {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 600;
+    transform: scale(1.1);
+}
+
+.colon {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.time-display {
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #4a5568;
+    padding: 10px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.wheel-scroll {
+    width: 60px;
+    scroll-behavior: smooth;
+}
+
+.wheel-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+}
+
+.selected {
+    font-weight: bold;
+    color: #00c3ff;
+}
+
+.invisible {
+    visibility: hidden;
+}
