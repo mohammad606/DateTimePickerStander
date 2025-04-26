@@ -36,7 +36,8 @@ npm install moment
 ## Usage/Examples
 
 ```javascript
-import {RexDateTimePickerStander} from './RexDateTimePickerStander';
+
+import RexDateTimePickerStander from 'craft-rex-date-time-picker-stander';
 
 function App() {
     return <RexDateTimePickerStander/>
